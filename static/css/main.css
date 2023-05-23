@@ -1,0 +1,248 @@
+body,*{margin: 0px ; padding: 0px;   font-family:'Signika Negative', sans-serif; box-sizing:border-box; }
+
+body{width: 100%; overflow-x:hidden; background:#dddddd4d;}
+
+
+a{text-decoration:none; color:inherit;}
+
+.img-ico{
+	width: 50px;
+	height: 50px;
+}
+
+.main{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    
+}
+
+
+.content{
+    flex:1 0 auto;
+}
+
+.img-ico > img{width: 100%; height: 100%}
+.navbar{
+ 
+    width:100%;
+    display: flex;
+    align-items: center;
+  
+}
+
+nav {
+  padding: 15px;
+   color:#000000e3; 
+   background: #ffffffe0;
+    border-bottom: 2px solid #00000017;
+}
+
+.mobile-view{
+  padding:10px;
+}
+
+.signature {
+	display: flex;
+	align-items:center;
+}
+
+.light-mode{
+    background:white; color:black;
+}
+
+.dark-mode{background:#000000e3; color:white}
+
+ul.nav-items { display: flex;  list-style-type:none;}
+
+ul.nav-items > li{margin-right: 8%; padding: 0px; cursor: pointer; border-bottom:2px solid transparent; transition:0.3s ease-in-out;}
+
+.col-reverse{flex-flow:column-reverse;}
+
+.space-between{justify-content:space-between;}
+.space-around{justify-content:space-around;}
+
+.align-center{align-items:center;}
+.align-start{align-items:flex-start;}
+.justify-end{justify-content:flex-end;}
+.w-fit{width:fit-content;}
+
+.mobile-view > .nav-items *{
+  margin:10px;
+}
+
+.col-6{width: 50%; }
+
+.footer{
+	padding: 13px;
+	width: 100%;
+	line-height: 1.5;
+}
+
+.footer .img-cont img{width:100px; height:100px}
+
+.btn{
+	margin-top: 10px;
+	text-decoration: none;
+	cursor:pointer;
+	padding:8px 13px 8px 13px;
+	border-radius:2px;
+}
+
+.btn-light{
+    background:white; color:black;
+}
+
+.btn-dark{
+    background:black; color:white;
+}
+
+ .btn-light:hover{
+    background:black;
+    color:white;
+  }
+
+  .btn-dark:hover{
+    background:white;
+    color:black;
+  }
+
+.flex-container{
+	display:flex;
+	align-items:center;
+}
+
+.footer{position:relative; bottom:0px; background:white; border-top: 2px solid #00000017;}
+
+.footer .img-cont img{width:100px; height:100px}
+
+.team{width:30%}
+
+.link-active{
+    border-bottom-color:black  !important;
+}
+
+ ul.nav-items li:hover{
+    border-bottom-color:black;
+}
+
+
+.mobile-view button{
+  font-size:21px;
+  float:right;
+}
+
+
+
+.inputdiv{
+    position:relative;
+    top:0px;
+    left:0px;
+    margin:20px;
+    width:40%;
+  }
+
+  .inputdiv > i{
+    position:absolute;
+    top:3px;
+    left:0px;
+    background:black;
+    color:white;
+    padding:9px;
+    border-radius:3px 0 0 3px;
+  }
+
+  .inputdiv > input , .inputdiv > select {
+    width:100%;
+    padding-left:40px;
+    padding-top:8px; padding-bottom:8px;
+    border:2px solid black;
+    border-radius:3px;
+  }
+
+  .inputdiv > input[type="submit"] , .inputdiv > button{
+    padding: 8px;
+     /* padding-right: 15px; */
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    width: 40%;
+    border-radius: 3px;
+    cursor:pointer;
+  }
+
+
+  .dark-faded{
+    background:#000000e3;
+    color:#ffffffe6;
+  }
+
+
+  .col-6{width:50%; line-height:2.5;}
+  .d-flex{
+      display:flex;
+      flex-wrap:wrap;
+  }
+
+  .w-100{width:100%}  .h-100{height:100%}
+
+  .justify-content-center{
+      justify-content:center;
+  }
+
+  .align-items-center{
+      align-items:center;
+  }
+
+.flex-col{
+  flex-direction:column;
+}
+
+.img-container > img{width:100%; height:100%}
+
+
+.banner{
+    padding:15px;
+    background:#000000e0;
+    color:#ffffffe8;
+    border-top:3px solid #0808082e;
+    
+
+
+}
+
+
+.col-5{width:40%; margin:10px;}
+
+
+
+
+
+
+
+@media (max-width:980px){
+  .mobile-view{display:block;}
+  .desktop-view {display:none;}
+  .col-xs-12{width:90% !important; margin:10px;}
+  .signature{width:80% !important;}
+}
+
+@media (min-width:981px){
+  .mobile-view{display:none;}
+  .desktop-view {display:block;}
+  .signature{width:35% !important;}
+
+}
+
+.project{
+  width: 20%;
+  height: max-content;
+  border: 2px solid #0000001a;
+  border-radius: 2.5px;
+  background: white;
+}
+
+.img-container{
+  height:30vh;
+}

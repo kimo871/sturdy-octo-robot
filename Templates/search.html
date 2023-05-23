@@ -1,0 +1,55 @@
+{% extends "Dashboard.html" %}
+{%load static%}
+{%block title%}
+<title>FCAI HR - Employees</title>
+{%endblock%}
+{%block style%}
+<link rel="stylesheet" href="{% static  'css/admin.css'%}"/>
+{%endblock%}
+{%block content%}
+<div style="padding:25px;" class="content ">
+               
+    <center>
+        <form class="search flex-container col-xs-12">
+            <input type="text" placeholder="Enter Employee  name"/>&nbsp;
+            <input style="margin-top:0px;" type="submit" value="search" class="btn dark-mode"/>
+        </form>
+        </center>
+    <!--Users Table-->
+<div class="tabs">
+<button class="btn dark-mode">Employees</button>
+</div>
+
+    <div class="user-table">
+        <table>
+            <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Department</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+          </table>
+    </div>
+
+   
+    </div>
+
+{%endblock%}
+
+{%block executer%}
+<script>
+    let giver=()=>{
+        let arr=[];
+        "{%for x in data%}"
+         arr.push({id:"{{x.id}}",fname:"{{x.fname}}",lname:"{{x.lname}}",Department:"{{x.Department}}"});
+        "{%endfor%}"
+        return [csrftoken,arr];
+    };
+    </script>
+    <script src="{% static 'js/search.js'%}"></script>
+{%endblock%}

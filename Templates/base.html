@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block title%}
+	<title>FCAI HR</title>
+	{%endblock%}
+	<link rel="icon" href="{% static 'images/download.png' %}"/>
+	<link rel="stylesheet" href="{% static  'css/main.css'%}"/>
+	{%block style%}
+	{%endblock%}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<div class="main">
+
+{% block navbar %}
+
+<!--Navbar Section-->
+<nav class="nav-section">
+    <div class="navbar light-mode ">
+     <div class="signature">
+        <a class="img-ico" href="/index"><img src="{%static 'images/download.png'%}" alt="fcai-logo" class="logo"/></a></a>
+        <h4>&nbsp; &nbsp; FCAI-HR</h4>
+     </div>
+	 
+   </div>
+
+   
+   </nav>
+ 
+{%endblock%}
+
+{%block content%}
+
+<div style="flex:1 0 0" class="content">
+	<div style="padding:20px; flex-wrap:wrap;" class="d-flex  align-items-center space-around h-100 ">
+	 <div class="project col-xs-12">
+		<div class="img-container"><img src="https://www.icharts.net/wp-content/uploads/2021/03/HR-Department-750x400.jpg" alt="laoding.."/></div>
+		<div style="padding:15px;" class="sub-cont">
+		 <h3>HR Administration Department</h3>
+		 <button  class="btn btn-dark"><a href='/Dashboard'>Enter</a></button>
+		</div>
+	  </div>
+ 
+	  <div class="project col-xs-12">
+		 <div class="img-container"><img src="https://static.vecteezy.com/system/resources/previews/000/338/697/non_2x/interracial-student-study-together-vector-character-illustration.jpg" alt="laoding.."/></div>
+		 <div style="padding:15px;" class="sub-cont">
+		  <h3>Student Affairs Department</h3>
+		  <button class="btn btn-dark">Enter</button>
+		 </div>
+	  </div>
+ 
+	  <div class="project col-xs-12">
+		 <div class="img-container"><img src="https://www.flexcarestaff.com/sites/default/files/styles/cta/public/2021-02/Education.png?itok=lxGfQTBC" alt="laoding.."/></div>
+		 <div style="padding:15px;" class="sub-cont">
+		  <h3>Higher Studies Department</h3>
+		  <button class="btn btn-dark">Enter</button>
+		 </div>
+	  </div>
+ 
+	  <div class="project col-xs-12">
+		 <div class="img-container"><img src="https://image.freepik.com/free-vector/computer-lab-abstract-concept-illustration_335657-3876.jpg" alt="laoding.."/></div>
+		 <div style="padding:15px;" class="sub-cont">
+		  <h3>Laboratory Tracking Administration</h3>
+		  <button class="btn btn-dark">Enter</button>
+		 </div>
+	  </div>
+ 
+	 
+	</div>
+  </div>
+{%endblock%}
+{%block middle %}
+{%endblock%}
+{% block footer %}
+   <!--Footer-->
+
+ <div class="footer">
+    <div class="flex-container space-between">
+     <div class="img-cont"><img src="{% static 'images/download.png'%}" alt="fcai-logo" /> <h4>Faculty of Computers <br>And Artificial Intelligence</h4></div>
+     <div class="team">
+         <h4>Team Members :</h4>
+         <p>Mohamed Kamal</p>
+         <p>Mohanad Magdy </p>
+         <p>Yousef abdullah</p>
+         <P>Mohamed Elsayed</P>
+         <p>Youssef Saeed</p>
+     </div>
+    </div>
+  </div>
+  {%endblock%}
+ </div>
+    <!--End-->
+    
+      
+
+{%block custom%}
+    <script src="{% static 'js/index.js'%}">
+
+    </script>
+    {%endblock%}
+    {%block csrf%}
+<script>
+
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+</script>
+
+{%endblock%}
+
+{%block executer%}
+<script>
+    let giver=()=>{
+        return csrftoken;
+    };
+    </script>
+    <script src="{% static 'js/store.js'%}"></script>
+    <script src="{% static 'js/add-user.js'%}"></script>
+{%endblock%}
+
+
+
+
+

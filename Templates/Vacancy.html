@@ -1,0 +1,68 @@
+{% extends "Dashboard.html" %}
+{% load static %}
+{%block title%}
+<title>FCAI HR - Submit Vacation</title>
+<style>
+    .inputdiv > i{top:1.8px; padding:9.3px;}
+</style>
+{%endblock%}
+{%block style%}
+
+{%endblock%}
+
+{% block content %}
+<div class="content">
+
+    <div class="banner ">
+        <h2>Submit Employee Vacation</h2>
+        <p class="dark-fade">Assign Vacations To Employees.</p>
+    </div>
+
+
+    <form class="signup  d-flex flex-col  w-100 " method="POST" >{% csrf_token %}
+        <!--<div class="d-flex justify-content-center ">-->
+
+
+
+
+
+
+        <div class="inputdiv col-xs-12">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="text" id="id" placeholder="Enter ID..." value="{{data.id}}" disabled/>
+        </div>
+        <span style="margin-left:20px;">Start  Date</span>
+        <div class="inputdiv col-xs-12">
+            <i style="" class="fa-solid fa-calendar"></i>
+            <input id="start_date" name="start" type="date" placeholder="Vacation Start" required />
+        </div>
+        <span style="margin-left:20px;">End  Date</span>
+        <div class="inputdiv col-xs-12">
+            <i style="" class="fa-solid fa-calendar"></i>
+            <input type="date" id="end_date" name="end" placeholder="Vacation End" required />
+        </div>
+
+        <div class="inputdiv col-xs-12">
+            <textarea required style="padding:20px; width:100%;" type="text" placeholder="Enter Reason of vacation" name="reason" id="reason"></textarea>
+        </div>
+
+    
+
+    <div class="inputdiv col-xs-12">
+        <input  type="submit" value="Submit" class="btn btn-dark"/>
+    </div>
+</form>
+
+    <!--End-->
+</div>
+{%endblock%}
+
+
+{%block executer%}
+<script>
+ let giver = (ans1="{{data.id}}",ans2="{{data.vac_available}}",ans3=csrftoken)=>{
+  return [parseInt(ans1),parseInt(ans2),ans3]
+ }
+    </script>
+   <script src="{% static 'js/vacation.js'%}"></script>
+{%endblock%}

@@ -1,0 +1,99 @@
+
+{% extends "base.html" %}
+{%load static%}
+{%block title%}
+<title>FCAI HR - Dashboard</title>
+
+{%endblock%}
+
+{%block style%}
+<link rel="stylesheet" href="{% static 'css/admin.css'%}"/>
+{%endblock%}
+
+{%block navbar%}
+
+<!--Navbar Section-->
+<nav class="nav-section">
+   <div class="navbar light-mode ">
+    <div class="signature">
+       <a class="img-ico" href="/index"><img src="{%static 'images/download.png'%}" alt="fcai-logo" class="logo"/></a></a>
+       <h4>&nbsp; &nbsp; FCAI-HR</h4>
+    </div>
+   
+         <div class="desktop-view w-100">
+           <ul class="nav-items align-start justify-end w-100">
+             <li class="link-active"><a style="text-decoration:none; color:black;" href="/Dashboard" >Home</a></li>
+               <li><a style="text-decoration:none; color:black;" href="/Employees/Add-User" >Add Employee</a></li>
+               <li><a style="text-decoration:none; color:black;" href="/Employees/table" >Employees</a></li>
+               <li><a style="text-decoration:none; color:black;" href="/Employees/Submitted-Vacations" >Submitted Vacancies</a></li>
+               <li><a style="text-decoration:none; color:black;" href="/logout" >log out&nbsp;<i  class="fa-solid fa-door-open"></i></a></li>
+           </ul>
+           </div>
+    
+
+           <div class="mobile-view w-100">
+             <button style="background:transparent; border:none; cursor:pointer; "><i class="fa-sharp fa-solid fa-align-justify"></i></button>
+           </div>
+
+   
+ 
+  </div>
+
+  <div style="display:none; opacity:0; " class="mobile-view w-100">
+   <ul style="" class="nav-items flex-col w-fit">
+     <li class="link-active"><a style="text-decoration:none; color:black;" href="./admin.html" >Home</a></li>
+       <li><a style="text-decoration:none; color:black;" href="/Employees/Add-User" >Add Employee</a></li>
+       <li><a style="text-decoration:none; color:black;" href="/Employees/table" >Employees</a></li>
+       <li><a style="text-decoration:none; color:black;" href="/Employees/Submitted-Vacations" >Submitted Vacancies</a></li>
+       <li><a style="text-decoration:none; color:black;" href="./index.html" >log out&nbsp;<i  class="fa-solid fa-door-open"></i></a></li>
+   </ul>
+  </div>
+  </nav>
+
+
+{%endblock%}
+
+{%block content%}
+<div class="content">
+    
+    <!--Admin Dashboard-->
+   <div class="dashboard">
+     <h1>Dashboard</h1>
+     <p class="dark-fade">Welcome back Admin , to your dashboard</p>
+     <div class="badges d-flex wrap space-around">
+      <div class="col-5 col-xs-12">
+         <h3>Hired Employees</h3>
+        <center> <i class="fa-solid fa-user"></i></center>
+         <p key="counter">{{hired}}</p>
+      </div>
+      <div class="col-5 col-xs-12">
+         <h3 >Current Employees</h3>
+        <center> <i class="fa-solid fa-pen-to-square"></i></center>
+         <p key="submitted">{{current_e}}</p>
+      </div>
+      <div class="col-5 col-xs-12">
+         <h3 >Submitted vacations</h3>
+         <center><i class="fa-solid fa-calendar-days"></i></center>
+         <p key="accepted">{{submitted}}</p>
+      </div>
+      <div class="col-5 col-xs-12">
+       <h3 >Current vacations</h3>
+       <center><i class="fa-solid fa-calendar-days"></i></center>
+       <p key="rejected">{{current_v}}</p>
+    </div>
+     </div>
+    
+     <!--End-->
+     <br/>
+     <!--Users Table-->
+       
+     
+     
+     <br>
+     <br>
+    
+   
+
+   </div>
+   </div>
+{%endblock%}

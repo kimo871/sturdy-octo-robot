@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{%block title%}
+<title>FCAI HR - Login</title>
+<style>
+    .form{
+        background: #fff;
+        width: 60%;
+        height: 70%;
+        border: 2px solid #0000001a;
+        border-radius: 3px;
+        padding:20px;
+    }
+    .inputdiv > i{top:0px !important; padding:9.3px;}
+    .inputdiv{width: 80% !important;}
+</style>
+
+{%endblock%}
+{%block navbar%}
+<nav class="nav-section">
+    <div class="navbar light-mode ">
+     <div class="signature">
+        <a class="img-ico" href="/index"><img src="{%static 'images/download.png'%}" alt="fcai-logo" class="logo"/></a></a>
+        <h4>&nbsp; &nbsp; FCAI-HR</h4>
+     </div>
+     </div>
+</nav>
+{%endblock%}
+{%block content%}
+<div class="content">
+ <div style="height:80vh" class="w-100 h-100 d-flex justify-content-center align-items-center">
+    <form  class="form d-flex flex-col  align-items-center" method="POST">{% csrf_token %}
+        {{ form}}
+        <h3>Welcome To Hr-Admin Panel</h3><br><br>
+        <div class="inputdiv col-xs-12">
+            <i class="fa-solid fa-user"></i>
+             <input  name="username" type="text" placeholder="User Name...." required/>
+             </div>
+  
+             <div  class="inputdiv col-xs-12">
+                <i class="fa-solid fa-user"></i>
+                 <input name="password" type="text" placeholder="Password...." required/>
+                 </div>
+
+                 <div class="inputdiv col-xs-12">
+                    <input  value="Add User " type="submit"  />
+                   </div> 
+    </form>
+ </div>
+</div>
+
+{%endblock%}
+{%block custom%}
+
+    {%endblock%}
+   
+{%block executer%}
+<script>
+ let giver = ()=>{
+     return csrftoken;
+ }
+</script>
+<script src="{% static 'js/auth.js'%}"></script>
+{%endblock%}

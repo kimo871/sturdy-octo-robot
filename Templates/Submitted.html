@@ -1,0 +1,78 @@
+{% extends "Dashboard.html" %}
+{% load static %}
+{%block title%}
+<title>FCAI HR - Submitted Vacancies</title>
+{%endblock%}
+
+{%block style%}
+<link rel="stylesheet" href="{% static  'css/admin.css'%}"/>
+{%endblock%}
+
+{%block content%}
+<div style="padding:25px;" class="content ">
+               
+                
+    <!--Users Table-->
+<div class="tabs">
+  <button class="btn dark-mode" onclick="show_data()">Vacancies</button>
+
+
+</div>
+
+<div class="user-table">
+<table>
+    <thead>
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Department</th>
+        <th>Date (from /to)</th>
+        <th>rest Days</th>
+        <th>Reason</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+
+
+  </table>
+</div>
+
+   
+    </div>
+
+{%endblock%}
+
+{%block executer%}
+<script>
+    let arr=[];
+    let obj;
+    let giver=()=>{
+        "{% for x in data %}"
+        obj={};
+         obj.rest = "{{x.rest}}"
+         obj.start = "{{x.start}}"
+         obj.end = "{{x.end}}"
+         obj.fname = "{{x.employee_id.fname}}"
+         obj.lname = "{{x.employee_id.lname}}"
+         obj.department = "{{x.employee_id.Department}}"
+         obj.reason = "{{x.reason}}"
+         obj.id = parseInt("{{x.employee_id.id}}")
+         obj.vacancy_id=parseInt("{{x.id}}")
+         obj.status= "{{x.status}}"
+         arr.push(obj);
+         console.log(obj)
+        "{%endfor%}"
+        return arr;
+    };
+
+    let token_giver = ()=>{
+        console.log(csrftoken)
+        return csrftoken;
+    }
+    </script>
+    <script src="{% static 'js/store.js'%}"></script>
+    <script src="{% static 'js/Submitted.js'%}"></script>
+{%endblock%}

@@ -1,0 +1,28 @@
+div.dialogue-container{
+    width:100%;
+    height:100%;
+    position:fixed;
+    background:black;
+    top:0px;
+    left:0px;
+    opacity:0.4;
+    display:none;
+    }
+    
+    div.dialogue{
+        position:fixed;
+        left:20%;
+        top:35%;
+        width:60%;
+        height:fit-content;
+        background:white;
+        border-radius:3px;
+        padding-bottom:20px;
+        display:none;
+        transition:2.5s ease-in-out;
+    }
+    
+    
+    hr{
+        color:#0000001a;
+    }

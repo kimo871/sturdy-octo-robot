@@ -1,0 +1,150 @@
+{% extends "Dashboard.html" %}
+{% load static %}
+{%block title%}
+<title>FCAI HR - Add User</title>
+{%endblock%}
+{%block style%}
+
+{%endblock%}
+{%block content%}
+<div class="content">
+
+    <div class="banner ">
+    <h2>Add User</h2>
+    <p class="dark-fade">Assign New Employees in Different Departments to the system.</p>
+    </div>
+    <form class="signup  d-flex  w-100 " method="POST" >{% csrf_token %}
+
+    
+
+     <div class="col-6 col-xs-12">
+
+      <div style="width:30%" class="inputdiv col-xs-12">
+          <i class="fa-solid fa-user"></i>
+           <input  name="fname" type="text" placeholder="First Name...." required/>
+           </div>
+
+           <div style="width:30%" class="inputdiv col-xs-12">
+              <i class="fa-solid fa-user"></i>
+               <input name="lname" type="text" placeholder="Last Name...." required/>
+               </div>
+     
+      <div class="inputdiv col-xs-12">
+       <i class="fa-solid fa-envelope"></i>
+        <input name="email" type="text" placeholder="Enter Email...." equired/>
+        </div>
+
+        
+
+            <div class="inputdiv col-xs-12">
+              <i class="fa-solid fa-address-book"></i>
+               <input name="address" type="text" placeholder="Enter Address...." required/>
+               </div>
+
+               
+
+                  <div style="margin:20px;" >
+                     <span> Gender : &nbsp;</span>
+                     <input type="radio" id="gen1" name="gender" value="Male" />
+                     <label for="gen1">&nbsp; Male &nbsp; </label>
+                     <input type="radio" id="gen2" name="gender" value="Female" />
+                     <label for="gen2">&nbsp; Female</label>
+                     </div>
+
+                     <div style="margin:20px;" >
+                         <span>Status : &nbsp;</span>
+                        <input type="radio" id="st1" name="status" value="Single" />
+                        <label for="st1">&nbsp; Single &nbsp; </label>
+                        <input type="radio" id="st2" name="status" value="Married" />
+                        <label for="st2">&nbsp; Married</label>
+                        </div>
+
+                  </div>
+
+                  <div class="col-6 col-xs-12">
+
+                     <div class="inputdiv col-xs-12">
+                         <i class="fa-solid fa-phone"></i>
+                          <input name="phone" type="number" placeholder="Enter Mobile Number...." required/>
+                          </div>
+
+                          
+                      
+                        <div class="inputdiv col-xs-12">
+                          <i class="fa-solid fa-business-time"></i>
+                          <input name="vac_available" type="number" placeholder="Number of available vacations...." required/>
+                         </div>
+
+                 
+
+                  <div class="inputdiv col-xs-12">
+                   <i class="fa-solid fa-dollar"></i>
+                   <input name="salary" type="number" placeholder="Salary...." required/>
+                  </div>
+                             
+                  <div class="inputdiv col-xs-12">
+                   <i style="" class="fa-solid fa-calendar"></i>
+                   <input name="birth" type="date" placeholder="Birth Date" required/>
+                  </div>
+
+                 
+                  
+                  <div class="inputdiv col-xs-12">
+                     <i  class="fa-solid fa-building-user"></i>
+                    <select id="department" key="department" name="department" required>
+                     <option name="ps" value="Public Safety and emergency services">Public Safety and emergency services</option>
+                     <option name="sa" value="Student affairs & services ">Student affairs & services </option>
+                     <option name="ac" value="Academic Staff">Academic Staff</option>
+                     <option name="fa" value="Financial Affairs">Financial Affairs</option>
+                     <option name="hr" value="Human Resources">Human Resources</option>
+                 </select>
+
+                  </div>
+                  
+                  </div>
+                  <div class="inputdiv col-xs-12">
+                   <input  value="Add User " type="submit"  />
+                  </div> 
+                 </form>
+
+                   
+
+                    
+</div>
+{%endblock%}
+
+{%block csrf%}
+<script>
+
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+</script>
+
+{%endblock%}
+
+{%block executer%}
+<script>
+    let giver=()=>{
+        return csrftoken;
+    };
+    </script>
+    <script src="{% static 'js/store.js'%}"></script>
+    <script src="{% static 'js/add-user.js'%}"></script>
+{%endblock%}
+
+
