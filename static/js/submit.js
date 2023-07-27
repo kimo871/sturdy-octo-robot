@@ -4,7 +4,7 @@ let start_date = document.getElementById("start_date");
 let end_date = document.getElementById("end_date");
 let form = document.querySelector("form");
 var handle = async (id,token,obj)=>{
-    const operation = await fetch(`http://127.0.0.1:8000/Employees/Submit-Vacation/${id}/`,{
+    const operation = await fetch(`Employees/Submit-Vacation/${id}/`,{
      method:"PUT",
      headers:{
          "Content-Type":"application/json",
