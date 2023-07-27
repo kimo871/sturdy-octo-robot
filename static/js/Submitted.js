@@ -9,7 +9,7 @@ const Department_choices =[
 let datapro = giver() ;
 let date_now = new Date();
 const request = async(Method,key,token)=>{
-    const operation = await fetch("http://127.0.0.1:8000/Employees/Submitted-Vacations",{
+    const operation = await fetch("Employees/Submitted-Vacations",{
         method:Method,
         headers:{
             "Content-Type":"application/json",
