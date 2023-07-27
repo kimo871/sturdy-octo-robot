@@ -18,7 +18,7 @@ console.log(form_inputs)
 var id = parseInt(form_inputs[1].value);
 console.log(id)
 async function delete_it (token2) {
-        const operation = await fetch(`http://127.0.0.1:8000/Employees/Edit-User/${id}`,{
+        const operation = await fetch(`Employees/Edit-User/${id}`,{
             method:"DELETE",
             headers:{
                 "Content-Type":"application/json",
@@ -35,7 +35,7 @@ async function delete_it (token2) {
     };
 
 async function   wait (obj,token2){
-    const r = await fetch(`http://127.0.0.1:8000/Employees/Edit-User/${id}/`,{
+    const r = await fetch(`Employees/Edit-User/${id}/`,{
         method:"POST",
         headers:{
             "Content-Type":"application/json",
