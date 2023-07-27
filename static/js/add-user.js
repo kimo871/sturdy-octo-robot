@@ -4,7 +4,7 @@
 let input_forms = document.querySelectorAll(".inputdiv > input");
 let form  = document.querySelector("form")
   async function   wait (obj,token2=giver()){
-    const r = await fetch("http://127.0.0.1:8000/Employees/Add-User/",{
+    const r = await fetch("Employees/Add-User/",{
         method:"POST",
         headers:{
             "Content-Type":"application/json",
