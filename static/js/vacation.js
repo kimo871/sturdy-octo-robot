@@ -5,7 +5,7 @@ let end_date = document.getElementById("end_date");
 let form = document.querySelector("form");
 console.log(giver()[0],giver()[1],giver()[2])
 var handle = async (id,token,obj)=>{
-    const operation = await fetch(`http://127.0.0.1:8000/Employees/Submit-Vacation/${id}/`,{
+    const operation = await fetch(`Employees/Submit-Vacation/${id}/`,{
      method:"POST",
      headers:{
          "Content-Type":"application/json",
