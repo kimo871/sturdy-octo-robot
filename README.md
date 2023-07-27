@@ -1,3 +1,8 @@
+
+#### Note : For Logging in here is Django  Super Admin Credentials :
+username : kimo89
+password : WEB_TEST1234
+
 # HR Administration  Web App
 ### A Project Related to my faculty was about building web app related to hr department using MVT based framework which is django and for only testing we used default sqllite database in framework also handling front-end validation and ajax calls done with vanilla javascript.
 
